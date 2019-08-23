@@ -88,6 +88,8 @@ web前端开发，勉强算是全栈，然而对于职业未来越来越恐惧�
 
 同时推荐哈佛的cs50公开课，已经翻译好了的，适合入门[cs50](http://open.163.com/special/opencourse/cs50.html)
 
+上面的有点旧了,补充 [b站cs50](https://search.bilibili.com/all?keyword=cs50&from_source=banner_search)
+
 这两个先后顺序不限，甚至可以混合看。可能会耗时1-3个月吧，毕竟项目这么忙。。。
 
 * [ ] 学完打勾
