@@ -10,3 +10,6 @@
 6. 简单的 hello.c 项目，用来入门。同时 clang 是一个基础命令我们可以在自己的 mac 上尝试。 
 7. stdio 也就是 standard input & output 是 c 用来执行 IO 操作的基础库。需要引入否则编译器不认识 printf 函数。
 8. clang 接受很多参数 例如： `clang -o hello hello.c` 也就是 `output` 来重新命名，可以用 `clang --help` 来查看支持的命令。
+9. `make` 命令，并不是一个 compiler ，而是一个封装了 clang 命令的程序。用来简化输入的命令。
+10. 调试技巧。同时解释了为什么要引入文件。
+11. 
