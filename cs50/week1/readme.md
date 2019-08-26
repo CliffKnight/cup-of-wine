@@ -7,4 +7,6 @@
 3. 通过游戏指出：计算机只能执行确定的指令，不能有假设，否则会出错。如果不是你，那么总要有一个人至少做一次这些繁琐的事情。
 4. 通过 Scratch 对比 C 中的一些语法来介绍C。这块比较熟悉，快速过一下。
 5. 机器只能理解机器语言，所以我们需要某种方法将我们写的东西(source code) 转换成机器理解的 machine code，这个叫做编译器 compiler。
-6. 简单的hello.c 项目，用来入门。同时 clang 是一个基础命令我们可以在自己的 mac 上尝试。 
+6. 简单的 hello.c 项目，用来入门。同时 clang 是一个基础命令我们可以在自己的 mac 上尝试。 
+7. stdio 也就是 standard input & output 是 c 用来执行 IO 操作的基础库。需要引入否则编译器不认识 printf 函数。
+8. clang 接受很多参数 例如： `clang -o hello hello.c` 也就是 `output` 来重新命名，可以用 `clang --help` 来查看支持的命令。
