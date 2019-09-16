@@ -103,7 +103,7 @@ web前端开发，勉强算是全栈，然而对于职业未来越来越恐惧�
 
 ### 插曲
 
-打算换工作，最新需要准备一下，枚举一下所有点然后简单的冲刺一下。
+打算换工作，最新需要准备一下，枚举一下所有点然后简单的冲刺一下。[web developer面试技能点枚举](https://github.com/g4rick/cup-of-wine/tree/master/web-developer)
 
 ## 2. c语言
 
