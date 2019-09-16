@@ -42,18 +42,20 @@ web 开发， 包含：
 
 ## 常见面试题
 
-1.html 标签语义化的理解
+### html
+
+#### 1.html 标签语义化的理解
 
   1. 在样式丢失时会有清晰的结构
   2. 有利于 seo 爬虫抓取
   3. 方面其他设备解析
   4. 便于团队协作、维护
 
-2.html 如何做离线存储。（前端性能优化的一环）
+#### 2.html 如何做离线存储。（前端性能优化的一环）
 
   可以在 html 头部添加 manifest='cache.manifest' 属性。
 
-3.cookie sessionStorage localStorage区别
+#### 3.cookie sessionStorage localStorage区别
 
   1. cookies是为了标识用户身份而存储在用户本地终端上的数据，始终在同源http请求中携带，即cookies在浏览器和服务器间来回传递，而sessionstorage和localstorage不会自动把数据发给服务器，仅在本地保存。
   2. 存储大小的限制不同。cookie保存的数据很小，不能超过4k，而sessionstorage和localstorage保存的数据大，可达到5M。
