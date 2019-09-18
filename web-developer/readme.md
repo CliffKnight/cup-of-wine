@@ -26,18 +26,41 @@ web 开发， 包含：
     * [ ] 一些特殊的 meta 标签： 例如viewport 
     * [ ] preload prefetch preconnect （也属于性能优化）
   * js
+    * 变量
+    * 类型
+    * 原型链
+    * 作用域&闭包  （相关考题很多）
+    * 执行机制
+    * 语法
+    * 各类api
   * css
+    * 盒模型
+    * BFC
+    * 居中布局 flex
 * 服务端
   * node
+    * 中间件原理https://juejin.im/post/5a5f5a126fb9a01cb0495b4c
+    * koa 库基本使用
 * 网络
+    * http https http2.0
+    * dns
 * 安全
+    * XSS
+    * CSRF
 * 运维
+    * docker
 * 数据库
 * 工程化
+    * 自动集成
+    * 打包工具
 * 框架
 * 浏览器
+  * 跨域
 * 与原生app结合
 * 业务轮子
+    * 实现前端监控   window.onerror; error event listerner;
+    * 实现埋点  document.addEventListener('mouseDown') DOMContentLoaded scroll https://mlog.club/article/24937
+    * 实现和app交互 bridge  webview 可以获取并连接h5发出的请求、自定义协议、传递函数实现回调或者添加事件监听
 * 其他
 
 ## 常见面试题
