@@ -61,6 +61,9 @@ web 开发， 包含：
     * 实现前端监控   window.onerror; error event listerner;
     * 实现埋点  document.addEventListener('mouseDown') DOMContentLoaded scroll https://mlog.club/article/24937
     * 实现和app交互 bridge  webview 可以获取并连接h5发出的请求、自定义协议、传递函数实现回调或者添加事件监听
+* js 轮子
+  * Promise 手写
+  * 迭代器生成器 手写生成器
 * 其他
 
 ## 常见面试题
