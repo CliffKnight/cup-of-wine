@@ -54,6 +54,7 @@ web 开发， 包含：
     * 自动集成
     * 打包工具
     * 发布方式
+    * require & import 区别
 * 框架
 * 浏览器
   * 跨域
@@ -90,3 +91,10 @@ web 开发， 包含：
   3. 数据的有效期不同。cookie在设置的cookie过期时间之前一直有效，即使窗口或者浏览器关闭。sessionstorage仅在浏览器窗口关闭之前有效。localstorage始终有效，窗口和浏览器关闭也一直保存，用作长久数据保存。
   4. 作用域不同。cookie在所有的同源窗口都是共享；sessionstorage不在不同的浏览器共享，即使同一页面；localstorage在所有同源窗口都是共享
 
+### ES6
+
+#### 1. require 和 import 的区别
+
+  1. require 是 commonJs 规范，输出的是值的拷贝，也就是说 modules.exports 输出后在改变原模块内容不会对 require 的造成影响。
+  2. export 输出的是值的引用。
+  3. 待整理...
