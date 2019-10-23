@@ -57,5 +57,74 @@ var dailyTemperatures = function(T) {
 
 3080ms 13.10%,  54.1MB 8.33%
 
+这个思路基本差不多了，最多也就是将slice 从 i 开始 后面不用加1，但是这种小优化不会带来质变。
+
+失误，其实可以完全不适用 slice 的。
+
+```javascript
+/**
+ * @param {number[]} T
+ * @return {number[]}
+ */
+var dailyTemperatures = function(T) {
+  return T.map((item, i) => {
+    const ind = T.findIndex((item2, ind1) => ind1 > i && item2 > item) - i; // 这里是绝对值 需要减去 i
+    return ind > -1 ? ind : 0;
+  });
+};
+```
+
+然而： 3800ms 10%, 43MB 19%
+
+因为findIndex其实也类似遍历，所以时间复杂度接近 O(n2)
+
+如何才能遍历一次解决问题呢？
+
+### 2. 尝试空间换时间
+
+想了半天还是需要多次遍历。
+
+### 3. 查答案
+
+解法1：单调栈。 
+
+其实我在2中已经很接近这个算法了，被我遗弃了。。。
+
+单调栈意思就是栈内元素维持一定的递增或者递减。
+
+解题思路：
+
+1. 维持一个单调递增栈，用来存放 T 的元素索引。
+2. 对比当前元素和栈顶元素的值。
+3. 如果当前元素大于栈顶元素对应的 T 值，那么就找到了栈顶元素的结果，栈顶元素出栈，继续判断下一个元素。
+4. 如果当前元素小于栈顶元素对应的 T 值，那么将当前元素的索引入栈。
+5. 如果最后都没有找到合适的，说明不存在，默认值为0的话就不用处理了。
+
+
+```javascript
+/**
+ * @param {number[]} T
+ * @return {number[]}
+ */
+var dailyTemperatures = function(T) {
+  const { length } = T;
+  const final = new Array(length).fill(0);
+  const stack = [];
+  for (let i = 0; i < length; i ++) {
+    while(stack.length && T[i] > T[stack[stack.length - 1]]) {
+      const sIndex = stack.pop();
+      final[sIndex] = i - sIndex;
+    }
+    stack.push(i);
+  }
+  return final;
+};
+```
+
+152ms 97%, 42MB 58%
+
+结果还可以。看看能不能优化。
+
+使用map代替for，并且不使用final. 搞不定 因为不是最后final不是在当前map就填写的。
 
 
