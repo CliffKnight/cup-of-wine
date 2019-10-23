@@ -129,6 +129,37 @@ var dailyTemperatures = function(T) {
 
 ### 3. 动态规划 DP
 
-讲道理我是第一次听到这个说法，我果然是渣渣。
+讲道理我是第一次听到这个说法，我果然是渣渣。 [动态规划](https://www.zhihu.com/question/23995189)
+
+这里的解法是：
+
+1. 从后往前计算
+2. 最后一个肯定是0
+3. 倒数第二个和最后一个对比，如果小于，那么就是1，如果大于那么由于最后一个已经是0了，表示后面已经没有比它大的了所以就不用比了，是0
+4. 类似的我们可以发现规律，只需要从后往前对比 i 和 i + 1，如果 i 小于 i + 1 那么就是1，如果i 等于i+1 那么就是 i+1的值+1, 如果i 大于i+1,那么就是 i再去和i+1的值的位置的值对比
+
+```javascript
+/**
+ * @param {number[]} T
+ * @return {number[]}
+ */
+var dailyTemperatures = function(T) {
+  for(let i = T.length - 1; i > 0; i--) {
+    
+  }
+  const { length } = T;
+  const final = new Array(length).fill(0);
+  const stack = [];
+  for (let i = 0; i < length; i ++) {
+    while(stack.length && T[i] > T[stack[stack.length - 1]]) {
+      const sIndex = stack.pop();
+      final[sIndex] = i - sIndex;
+   }
+    stack.push(i);
+  }
+  return final;
+};
+```
+
 
 
