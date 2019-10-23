@@ -114,7 +114,7 @@ var dailyTemperatures = function(T) {
     while(stack.length && T[i] > T[stack[stack.length - 1]]) {
       const sIndex = stack.pop();
       final[sIndex] = i - sIndex;
-    }
+   }
     stack.push(i);
   }
   return final;
@@ -126,5 +126,9 @@ var dailyTemperatures = function(T) {
 结果还可以。看看能不能优化。
 
 使用map代替for，并且不使用final. 搞不定 因为不是最后final不是在当前map就填写的。
+
+### 3. 动态规划 DP
+
+讲道理我是第一次听到这个说法，我果然是渣渣。
 
 
