@@ -144,22 +144,32 @@ var dailyTemperatures = function(T) {
  * @return {number[]}
  */
 var dailyTemperatures = function(T) {
-  for(let i = T.length - 1; i > 0; i--) {
-    
-  }
-  const { length } = T;
-  const final = new Array(length).fill(0);
-  const stack = [];
-  for (let i = 0; i < length; i ++) {
-    while(stack.length && T[i] > T[stack[stack.length - 1]]) {
-      const sIndex = stack.pop();
-      final[sIndex] = i - sIndex;
-   }
-    stack.push(i);
+  const final = new Array(T.length).fill(0);
+  // 最后一个是 0, 从倒数第二个开始
+  for (let i = T.length - 2; i >= 0; i--) {
+    if (T[i + 1] > T[i]) {
+      final[i] = 1;
+      continue;
+    }
+    if (final[i + 1] <= 0) {
+      continue;
+    }
+    let k = 1;
+    while (final[k + i] > 0 && T[k + i] <= T[i]) {
+      k = final[k + i] + k;
+    }
+    if (T[k + i] > T[i]) {
+      final[i] = k;
+    }
   }
   return final;
 };
 ```
 
+初版，不熟练调试了一段时间。
+
+164ms 92%; 94.9MB 97%
+
+效果不错。
 
 
